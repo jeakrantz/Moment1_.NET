@@ -1,4 +1,12 @@
-﻿@{
+﻿@* 
+    Moment 1.1 - Razor
+    Kurs: Webbutveckling med .NET
+    Utvecklare: Jeanette Krantz
+    Datum: 2024-02-06
+*@
+
+@{
+    @* Hämtar dagens datum som visas i Header *@
     var date = DateTime.Now.Date;
 }
 
@@ -29,6 +37,7 @@
 
     <div class="container  no-padding">
         <div class="row no-padding">
+            @* Knappar för att öppna eller stänga menyn. Syns endast in mindre skärmar. *@
             <button id="open-menu-btn" onclick="openMenu()">Meny <i class="fa-solid fa-bars"></i></button>
             <button id="close-menu-btn" onclick="closeMenu()">Stäng <i class="fa-solid fa-xmark"></i></button>
             <div class="col-md-2 no-padding" id="menu-container">

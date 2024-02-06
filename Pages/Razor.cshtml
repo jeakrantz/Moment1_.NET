@@ -1,10 +1,17 @@
-﻿@page
+﻿@* 
+    Moment 1.1 - Razor
+    Kurs: Webbutveckling med .NET
+    Utvecklare: Jeanette Krantz
+    Datum: 2024-02-06
+*@
+
+@page
 @model MyApp.Namespace.RazorModel
 @{
     ViewData["Title"] = "Razor";
 
+    @* Array med kurser *@
     string[] courses = {
-
     "DT057G, Webbutveckling I",
     "DT084G, Introduktion till programmering i JavaScript",
     "DT068G, Webbanvändbarhet",
@@ -19,6 +26,7 @@
     "DT071G, Programmering i C#.NET"
     };
 
+    @* Dagens datum hämtas och lagras. *@
     var dateNow = DateTime.Now;
 }
 
