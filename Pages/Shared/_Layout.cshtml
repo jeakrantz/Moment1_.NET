@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var date = DateTime.Now.Date;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,33 +10,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Moment1</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Moment1.styles.css" asp-append-version="true" />
 </head>
 
 <body>
-    <header class="container">
+    <header>
         <div class="d-flex flex-row justify-content-between">
-        <a asp-area="" asp-page="/Index">Moment1</a>
-        <p>Dagens datum är: </p>
+            <h1><a asp-area="" asp-page="/Index">Moment1</a></h1>
+            <p>Dagens datum är: @date.ToString("yyyy/MM/dd")</p>
         </div>
     </header>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
+    <div class="container  no-padding">
+        <div class="row no-padding">
+            <div class="col-md-2  no-padding">
                 <nav>
-                    <ul>
-                        <li>
-                            <a asp-area="" asp-page="/Index">Home</a>
+                    <ul class="nav flex-column text-center text-md-start">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Index">Start</a>
                         </li>
-                        <li>
-                            <a asp-area="" asp-page="/Privacy">Privacy</a>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/Razor">Razor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-page="/About">Om sida</a>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <main class="col-sm-8" role="main">
+            <main class="col-md-10" role="main">
                 @RenderBody()
             </main>
         </div>
@@ -40,7 +51,8 @@
 
     <footer>
         <div class="text-center">
-            &copy; 2024 - Moment1 - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <p>Av Jeanette Krantz - Kontakta mig via epost: <a
+                    href="mailto:jekr2201@@student.miun.se">jekr2201@@student.miun.se</a></p>
         </div>
     </footer>
 
