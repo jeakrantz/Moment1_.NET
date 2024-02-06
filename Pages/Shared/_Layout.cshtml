@@ -14,11 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1b3245a0b9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Moment1.styles.css" asp-append-version="true" />
 </head>
 
-<body>
+<body onresize="removeBtn()">
     <header>
         <div class="d-flex flex-row justify-content-between">
             <h1><a asp-area="" asp-page="/Index">Moment1</a></h1>
@@ -28,8 +29,10 @@
 
     <div class="container  no-padding">
         <div class="row no-padding">
-            <div class="col-md-2  no-padding">
-                <nav>
+            <button id="open-menu-btn" onclick="openMenu()">Meny <i class="fa-solid fa-bars"></i></button>
+            <button id="close-menu-btn" onclick="closeMenu()">Stäng <i class="fa-solid fa-xmark"></i></button>
+            <div class="col-md-2 no-padding" id="menu-container">
+                <nav id="menu">
                     <ul class="nav flex-column text-center text-md-start">
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Index">Start</a>
