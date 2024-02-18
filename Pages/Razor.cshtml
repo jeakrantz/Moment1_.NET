@@ -31,16 +31,22 @@
 }
 
 <div>
-    <h1>@ViewData["Title"]</h1>
-    <p>En sida med Razor-kod</p>
+    <h2>@ViewData["Title"]</h2>
+    <p>På denna sidan finns ett antal uppgifter som har lösts med Razor-kod</p>
+
+    <h3>Utskrift av datum</h3>
 
     <p>Datum/klockslag: @dateNow</p>
+
+    <h3>Är det måndag?</h3>
 
     @if(dateNow.DayOfWeek == DayOfWeek.Monday){
         <p>Idag är det måndag.</p>
     } else {
         <p>Idag är det inte måndag</p>
     }
+
+    <h3>Skriva ut lista</h3>
 
     <p>Kurser jag läst:</p>
     <ol>
